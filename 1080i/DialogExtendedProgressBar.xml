@@ -13,7 +13,7 @@
             <visible>!Window.IsActive(DialogMusicInfo.xml)</visible>
             <visible>!Window.IsActive(DialogAddonInfo.xml)</visible>
             <visible>!Window.IsActive(DialogPVRInfo.xml)</visible>
-            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <visible>[!Window.IsVisible(fullscreenvideo) | !String.IsEmpty(Window(10151).Property(activeareastartup))]</visible>
             <visible>!Window.IsVisible(visualisation)</visible>
             <control type="image">
                 <description>background image</description>
