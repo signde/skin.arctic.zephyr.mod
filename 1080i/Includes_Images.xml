@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Image_Color_DolbyVision">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,FEL)">flags/color/other/dolbyvision_fel.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,MEL)">flags/color/other/dolbyvision_mel.png</value>
+        <value>flags/color/other/dolbyvision.png</value>
+    </variable>
 
     <variable name="PercentWatched">
         <value condition="Skin.HasSetting(hide.markers)"></value>

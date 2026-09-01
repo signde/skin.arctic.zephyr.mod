@@ -15,7 +15,7 @@
                 <control type="label">
                     <description>Header Label</description>
                     <left>70</left>
-                    <width>1000</width>
+                    <width>950</width>
                     <posy>0</posy>
                     <include>FontTop</include>
                     <textcolor>Dark2</textcolor>
@@ -209,7 +209,7 @@
                     <label>31290</label>
                     <align>left</align>
                     <onclick>Dialog.Close(1197)</onclick>
-                    <onclick>ActivateWindow(playerprocessinfo)</onclick>
+                    <onclick>RunScript(script.signde.tinyppi,dialog)</onclick>
                 </control>
             </control>
         </control>
