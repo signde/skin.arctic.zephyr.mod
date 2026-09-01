@@ -1188,7 +1188,7 @@
                 <control type="label">
                     <description>Header Label</description>
                     <left>70</left>
-                    <width>1000</width>
+                    <width>950</width>
                     <posy>0</posy>
                     <include>FontTop</include>
                     <textcolor>Dark2</textcolor>
@@ -2219,7 +2219,7 @@
 
     <include name="DefOSDPlayerTitle">
         <control type="label" description="Show">
-            <width>$PARAM[width]</width>
+            <width>730</width>
             <top>40</top>
             <height>40</height>
             <font>MediumBold</font>
@@ -2232,7 +2232,7 @@
 
     <include name="DefOSDPlayerTVShowTitle">
         <control type="label" description="Show">
-            <width>$PARAM[width]</width>
+            <width>730</width>
             <top>40</top>
             <height>40</height>
             <font>MediumBold</font>
@@ -3262,6 +3262,28 @@
             <texture colordiffuse="$PARAM[color]">flags/$VAR[$PARAM[Star]].png</texture>
             <visible>$PARAM[visible]</visible>
         </control>
+        </definition>
+    </include>
+
+    <!-- Keep the rating stars together as one item in the colored media flag row. -->
+    <include name="Def_Colored_Flags_Rating">
+        <param name="visible" default="true"/>
+        <param name="color" default="$VAR[ColorStars]"/>
+        <definition>
+            <control type="grouplist">
+                <visible>$PARAM[visible]</visible>
+                <width min="0" max="320">auto</width>
+                <height>64</height>
+                <centertop>50%</centertop>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include content="Def_Flags_Furniture_Small">
+                    <param name="Star" value="$PARAM[Star]" />
+                    <param name="visible" value="$PARAM[visible]" />
+                    <param name="color" value="$PARAM[color]" />
+                </include>
+            </control>
         </definition>
     </include>
 

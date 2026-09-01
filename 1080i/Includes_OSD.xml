@@ -174,12 +174,12 @@
                 <itemgap>12</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="label" description="Video Info">
-                    <width min="20" max="650">auto</width>
+                    <width min="20" max="690">auto</width>
                     <height>40</height>
                     <top>10</top>
                     <font>Flag</font>
                     <textcolor>$VAR[OSDPanelWhite30]</textcolor>
-                    <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[ListItemAudioCodec,,]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDR,  •  ,]</label>
+                    <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[AudioCodecOSDVar]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDROSD,  •  ,]</label>
                     <visible>!Skin.HasSetting(furniture.flagiconsosdnoicons) + Skin.HasSetting(furniture.flagiconsosd)</visible>
                 </control>
                 <control type="image">
@@ -270,92 +270,92 @@
                 <itemgap>12</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="label" description="Video Info">
-                    <width min="20" max="650">auto</width>
+                    <width min="20" max="690">auto</width>
                     <height>40</height>
                     <top>10</top>
                     <font>Flag</font>
                     <textcolor>$VAR[OSDPanelWhite30]</textcolor>
-                    <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[ListItemAudioCodec,,]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDR,  •  ,]</label>
+                    <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[AudioCodecOSDVar]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDROSD,  •  ,]</label>
                     <visible>!Skin.HasSetting(furniture.flagiconsosdnoicons) + Skin.HasSetting(furniture.flagiconsosd)</visible>
                 </control>
                 <control type="image">
-                    <width min="20" max="70">auto</width>
-                    <height>55</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoResolution,flags/color/resolution/,.png]</texture>
-                    <aspectratio align="left">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="$INFO[VideoPlayer.VideoResolution,flags/color/resolution/,.png]">$INFO[VideoPlayer.VideoResolution,resource://resource.images.mediaflags.signde/color/resolution/,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.VideoResolution) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image">
-                    <width min="20" max="80">auto</width>
-                    <height>55</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoCodec,flags/color/source/,.png]</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="$INFO[VideoPlayer.VideoCodec,flags/color/source/,.png]">$INFO[VideoPlayer.VideoCodec,resource://resource.images.mediaflags.signde/color/source/,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.VideoCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image">
-                    <width min="20" max="80">auto</width>
-                    <height>50</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoAspect,flags/color/aspectratio/,.png]</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="$INFO[VideoPlayer.VideoAspect,flags/color/aspectratio/,.png]">$INFO[VideoPlayer.VideoAspect,resource://resource.images.mediaflags.signde/color/aspectratio/,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.VideoAspect) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image">
-                    <width min="20" max="98">auto</width>
-                    <height>55</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">$VAR[ListItemAudioCodec,flags/color/audio/,.png]</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="$VAR[ListItemAudioCodec,flags/color/audio/,.png]">$VAR[ColorMediaFlagAudioCodec,resource://resource.images.mediaflags.signde/color/audio/,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image">
-                    <width min="20" max="70">auto</width>
-                    <height>55</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">$INFO[VideoPlayer.AudioChannels,flags/color/channels/,.png]</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="$INFO[VideoPlayer.AudioChannels,flags/color/channels/,.png]">$INFO[VideoPlayer.AudioChannels,resource://resource.images.mediaflags.signde/color/channels/,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.AudioChannels) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image" description="HDR10+">
-                    <width min="20" max="100">auto</width>
-                    <height>60</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">flags/color/other/hdr10plus.png</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="flags/color/other/hdr10plus.png">resource://resource.images.mediaflags.signde/color/hdr/hdr10plus.png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR10Plus]</visible>
                 </control>
                 <control type="image" description="HDR10">
-                    <width min="20" max="100">auto</width>
-                    <height>60</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">flags/color/other/hdr10.png</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="flags/color/other/hdr10.png">resource://resource.images.mediaflags.signde/color/hdr/hdr10.png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR10]</visible>
                 </control>
                 <control type="image" description="HDR">
-                    <width min="20" max="100">auto</width>
-                    <height>60</height>
-                    <centertop>53%</centertop>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
                     <texture fallback="flags/fallback.png">flags/color/other/hdrnew.png</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR]</visible>
                 </control>
                 <control type="image" description="HLG">
-                    <width min="20" max="100">auto</width>
-                    <height>60</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">flags/color/other/hlg.png</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="flags/color/other/hlg.png">resource://resource.images.mediaflags.signde/color/hdr/hlg.png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHLG]</visible>
                 </control>
                 <control type="image" description="Dolby Vision">
-                    <width min="20" max="100">auto</width>
-                    <height>60</height>
-                    <centertop>53%</centertop>
-                    <texture fallback="flags/fallback.png">flags/color/other/dolbyvision.png</texture>
-                    <aspectratio align="center">keep</aspectratio>
+                    <width>85</width>
+                    <height>58</height>
+                    <centertop>50%</centertop>
+                    <texture fallback="flags/color/other/dolbyvision.png">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoDolbyVision]</visible>
                 </control>
             </control>
@@ -491,12 +491,12 @@
             <itemgap>12</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
             <control type="label" description="Video Info">
-                <width min="20" max="650">auto</width>
+                <width min="20" max="690">auto</width>
                 <height>40</height>
                 <top>10</top>
                 <font>Flag</font>
                 <textcolor>$VAR[OSDPanelWhite70]</textcolor>
-                <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[ListItemAudioCodec,,]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDR,  •  ,]</label>
+                <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[AudioCodecOSDVar]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDROSD,  •  ,]</label>
                 <visible>!Skin.HasSetting(furniture.flagiconsosdnoicons) + Skin.HasSetting(furniture.flagiconsosd)</visible>
             </control>
             <control type="image">
@@ -628,92 +628,92 @@
             <itemgap>12</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
             <control type="label" description="Video Info">
-                <width min="20" max="650">auto</width>
+                <width min="20" max="690">auto</width>
                 <height>40</height>
                 <top>10</top>
                 <font>Flag</font>
                 <textcolor>$VAR[OSDPanelWhite70]</textcolor>
-                <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[ListItemAudioCodec,,]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDR,  •  ,]</label>
+                <label>$INFO[VideoPlayer.VideoCodec,,  •  ]$INFO[VideoPlayer.VideoResolution,,  •  ]$INFO[VideoPlayer.VideoAspect,,  •  ]$VAR[AudioCodecOSDVar]$VAR[LabelOSDAudioChannels,  •  ,]$VAR[ListItemHDROSD,  •  ,]</label>
                 <visible>!Skin.HasSetting(furniture.flagiconsosdnoicons) + Skin.HasSetting(furniture.flagiconsosd)</visible>
             </control>
             <control type="image">
-                <width min="20" max="70">auto</width>
-                <height>55</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoResolution,flags/color/resolution/,.png]</texture>
-                <aspectratio align="left">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="$INFO[VideoPlayer.VideoResolution,flags/color/resolution/,.png]">$INFO[VideoPlayer.VideoResolution,resource://resource.images.mediaflags.signde/color/resolution/,.png]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.VideoResolution) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image">
-                <width min="20" max="80">auto</width>
-                <height>55</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoCodec,flags/color/source/,.png]</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="$INFO[VideoPlayer.VideoCodec,flags/color/source/,.png]">$INFO[VideoPlayer.VideoCodec,resource://resource.images.mediaflags.signde/color/source/,.png]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.VideoCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image">
-                <width min="20" max="80">auto</width>
-                <height>50</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">$INFO[VideoPlayer.VideoAspect,flags/color/aspectratio/,.png]</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="$INFO[VideoPlayer.VideoAspect,flags/color/aspectratio/,.png]">$INFO[VideoPlayer.VideoAspect,resource://resource.images.mediaflags.signde/color/aspectratio/,.png]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.VideoAspect) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image">
-                <width min="20" max="98">auto</width>
-                <height>55</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">$VAR[ListItemAudioCodec,flags/color/audio/,.png]</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="$VAR[ListItemAudioCodec,flags/color/audio/,.png]">$VAR[ColorMediaFlagAudioCodec,resource://resource.images.mediaflags.signde/color/audio/,.png]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image">
-                <width min="20" max="70">auto</width>
-                <height>55</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">$INFO[VideoPlayer.AudioChannels,flags/color/channels/,.png]</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="$INFO[VideoPlayer.AudioChannels,flags/color/channels/,.png]">$INFO[VideoPlayer.AudioChannels,resource://resource.images.mediaflags.signde/color/channels/,.png]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.AudioChannels) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image" description="HDR10+">
-                <width min="20" max="100">auto</width>
-                <height>60</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">flags/color/other/hdr10plus.png</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="flags/color/other/hdr10plus.png">resource://resource.images.mediaflags.signde/color/hdr/hdr10plus.png</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR10Plus]</visible>
             </control>
             <control type="image" description="HDR10">
-                <width min="20" max="100">auto</width>
-                <height>60</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">flags/color/other/hdr10.png</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="flags/color/other/hdr10.png">resource://resource.images.mediaflags.signde/color/hdr/hdr10.png</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR10]</visible>
             </control>
             <control type="image" description="HDR">
-                <width min="20" max="100">auto</width>
-                <height>60</height>
-                <centertop>53%</centertop>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
                 <texture fallback="flags/fallback.png">flags/color/other/hdrnew.png</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHDR]</visible>
             </control>
             <control type="image" description="HLG">
-                <width min="20" max="100">auto</width>
-                <height>60</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">flags/color/other/hlg.png</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="flags/color/other/hlg.png">resource://resource.images.mediaflags.signde/color/hdr/hlg.png</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoHLG]</visible>
             </control>
             <control type="image" description="Dolby Vision">
-                <width min="20" max="100">auto</width>
-                <height>60</height>
-                <centertop>53%</centertop>
-                <texture fallback="flags/fallback.png">flags/color/other/dolbyvision.png</texture>
-                <aspectratio align="center">keep</aspectratio>
+                <width>85</width>
+                <height>58</height>
+                <centertop>50%</centertop>
+                <texture fallback="flags/color/other/dolbyvision.png">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + Skin.HasSetting(furniture.flagiconsosdnoicons) + $EXP[IsVideoDolbyVision]</visible>
             </control>
             <include content="Def_Flag">
@@ -1866,6 +1866,17 @@
             <onclick>SetRating</onclick>
             <visible>!String.IsEmpty(MusicPlayer.DBID)</visible>
         </control>
+        <control type="button" id="23">
+            <description>PlayerProcessInfo</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/info.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1" flipx="true">osd/info.png</texturenofocus>
+            <onclick>RunScript(script.signde.tinyppi,dialog)</onclick>
+        </control>
         <control type="button" id="24">
             <description>Settings</description>
             <width>48</width>
@@ -2034,6 +2045,17 @@
             <onclick>ActivateWindow(videoplaylist)</onclick>
             <visible>Integer.IsGreater(Playlist.Length(video),1) + !Pvr.IsPlayingTv</visible>
         </control>
+        <control type="button" id="34">
+            <description>PlayerProcessInfo</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/info.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1">osd/info.png</texturenofocus>
+            <onclick>RunScript(script.signde.tinyppi,dialog)</onclick>
+        </control>
         <control type="button" id="19">
             <description>Settings</description>
             <width>48</width>
@@ -2201,6 +2223,17 @@
             <onclick>ActivateWindow(videoplaylist)</onclick>
             <visible>Integer.IsGreater(Playlist.Length(video),1) + !Pvr.IsPlayingTv</visible>
         </control>
+        <control type="button" id="34">
+            <description>PlayerProcessInfo</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/info.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1">osd/info.png</texturenofocus>
+            <onclick>RunScript(script.signde.tinyppi,dialog)</onclick>
+        </control>
         <control type="button" id="19">
             <description>Settings</description>
             <width>48</width>
@@ -2272,6 +2305,8 @@
             <control type="group">
                 <visible>Skin.HasSetting(ClockOSD)</visible>
                 <include>Animation.ViHi</include>
+                <left>-210</left>
+                <right>210</right>
                 <control type="image">
                     <description>background image</description>
                     <posx>0</posx>
@@ -2540,7 +2575,7 @@
                 <itemgap>0</itemgap>
                 <orientation>horizontal</orientation>
                 <align>right</align>
-                <onleft>101</onleft>
+                <onleft>19</onleft>
                 <onright>1</onright>
                 <include>DefOSDUpDown</include>
                 <usecontrolcoords>true</usecontrolcoords>
@@ -2842,6 +2877,7 @@
     
     <include name="Seekbar1">
     
+		
         <!-- Normal -->
         <control type="group">
             <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
@@ -3151,6 +3187,7 @@
     </include>
      
     <include name="Seekbar2">
+	
         
         <!-- New OSD -->
         <control type="group"> 
@@ -3457,6 +3494,7 @@
     </include>
     
     <include name="Seekbar3">
+	
         
         <!-- Side OSD -->
         <control type="group">

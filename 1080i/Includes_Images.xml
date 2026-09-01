@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <!-- Shared artwork uses dtsx; keep the stock audio variable for monochrome flags. -->
+    <variable name="ColorMediaFlagAudioCodec">
+        <value condition="$EXP[IsAudioCodecATMOS]">atmos</value>
+        <value condition="$EXP[IsAudioCodecDTSX]">dtsx</value>
+        <value condition="VideoPlayer.IsFullscreen + String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)">atmos</value>
+        <value condition="VideoPlayer.IsFullscreen + String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)">atmos</value>
+        <value condition="VideoPlayer.IsFullscreen + String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)">dtsx</value>
+        <value condition="VideoPlayer.IsFullscreen + String.IsEqual(VideoPlayer.AudioCodec,dts-x)">dtsx</value>
+        <value condition="!VideoPlayer.IsFullscreen + String.IsEqual(ListItem.AudioCodec,truehd_atmos)">atmos</value>
+        <value condition="!VideoPlayer.IsFullscreen + String.IsEqual(ListItem.AudioCodec,eac3_ddp_atmos)">atmos</value>
+        <value condition="!VideoPlayer.IsFullscreen + String.IsEqual(ListItem.AudioCodec,dtshd_ma_x)">dtsx</value>
+        <value condition="!VideoPlayer.IsFullscreen + String.IsEqual(ListItem.AudioCodec,dts-x)">dtsx</value>
+        <value condition="VideoPlayer.IsFullscreen">$INFO[VideoPlayer.AudioCodec]</value>
+        <value>$INFO[ListItem.AudioCodec]</value>
+    </variable>
+
+    <variable name="ColorMediaFlagHubAudioCodec">
+        <value condition="String.IsEqual(Container(9500).ListItem.AudioCodec,truehd_atmos)">atmos</value>
+        <value condition="String.IsEqual(Container(9500).ListItem.AudioCodec,eac3_ddp_atmos)">atmos</value>
+        <value condition="String.IsEqual(Container(9500).ListItem.AudioCodec,dtshd_ma_x)">dtsx</value>
+        <value condition="String.IsEqual(Container(9500).ListItem.AudioCodec,dts-x)">dtsx</value>
+        <value>$INFO[Container(9500).ListItem.AudioCodec]</value>
+    </variable>
+
+    <variable name="Image_Color_DolbyVision">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,FEL)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_fel.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,MEL)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_mel.png</value>
+        <value>resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</value>
+    </variable>
 
     <variable name="PercentWatched">
         <value condition="Skin.HasSetting(hide.markers)"></value>
